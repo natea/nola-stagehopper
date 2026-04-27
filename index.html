@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>NOLA Jazz Tonight</title>
+
+<!-- PWA -->
+<meta name="theme-color" content="#1a1715" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NOLA Jazz Tonight" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%; width: 100%;
+    background: #0F0E0C;
+    font-family: -apple-system, system-ui, "Segoe UI", sans-serif;
+    color: #F5F1EA;
+    overflow: hidden;
+    position: fixed;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<!-- Data + app -->
+<script src="schedule.js"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+<script type="text/babel">
+  setTimeout(() => {
+    ReactDOM.createRoot(document.getElementById('root')).render(<window.App />);
+  }, 50);
+</script>
+</body>
+</html>
